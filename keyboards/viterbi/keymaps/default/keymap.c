@@ -29,7 +29,7 @@ enum custom_keycodes {
 #define KC_RASE RAISE
 #define KC_QWER QWERTY
 #define KC_CMDS LGUI(KC_SPC)
-
+#define KC_CAD LCTL(LALT(KC_DEL))
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -56,7 +56,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|----+----+----+----+----+----+----|    |----+----+----+----+----+----+----|
      HOME,LSFT, Z  , X  , C  , V  , B  ,      N  , M  ,COMM,DOT ,SLSH,UP  ,BSLS,
   //|----+----+----+----+----+----+----|    |----+----+----+----+----+----+----|
-     END ,LCTL,LALT,LGUI, UP ,CMDS,BSPC,     SPC ,RASE,    ,    ,LEFT,DOWN,RGHT
+     END ,LCTL,LALT,LGUI, UP ,CMDS,BSPC,     SPC ,RASE,CAD ,    ,LEFT,DOWN,RGHT
   //`----+----+----+----+----+----+----'    `----+----+----+----+----+----+----'
   ),
 
