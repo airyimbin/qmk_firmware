@@ -30,6 +30,7 @@ enum custom_keycodes {
 #define KC_QWER QWERTY
 #define KC_CMDS LGUI(KC_SPC)
 
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* QWERTY
