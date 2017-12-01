@@ -143,7 +143,8 @@ void reset_keyboard(void) {
 #else
   wait_ms(250);
 #endif
-#ifdef CATERINA_BOOTLOADER
+// this is also done later in bootloader.c - not sure if it's neccesary here
+#ifdef BOOTLOADER_CATERINA
   *(uint16_t *)0x0800 = 0x7777; // these two are a-star-specific
 #endif
   bootloader_jump();
@@ -1105,8 +1106,6 @@ ISR(TIMER1_COMPA_vect)
 
 }
 
-
-
 #endif // breathing
 
 #else // backlight
@@ -1168,6 +1167,7 @@ void send_nibble(uint8_t number) {
 __attribute__((weak))
 uint16_t hex_to_keycode(uint8_t hex)
 {
+  hex = hex & 0xF;
   if (hex == 0x0) {
     return KC_0;
   } else if (hex < 0xA) {
